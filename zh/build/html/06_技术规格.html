@@ -1,0 +1,1283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. 技术规格 &mdash; JAKA Mini 硬件用户手册 V06 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=88fe0da7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8dea7153"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=540d3cec"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="7. 运输及调试" href="07_%E8%BF%90%E8%BE%93%E5%8F%8A%E8%B0%83%E8%AF%95.html" />
+    <link rel="prev" title="5. 系统概述" href="05_%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAKA Mini 硬件用户手册
+              <img src="_static/Logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01_%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E.html">1. 声明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_%E4%BA%A7%E5%93%81%E6%B8%85%E5%8D%95.html">2. 产品清单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_%E6%89%8B%E5%86%8C%E6%A6%82%E8%BF%B0.html">3. 手册概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_%E5%AE%89%E5%85%A8%E8%A7%84%E8%8C%83.html">4. 安全规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html">5. 系统概述</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. 技术规格</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id3">6.1. 技术参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.1.1. 机器人技术规格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">6.1.2. 控制柜技术规格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">6.2. 机械尺寸</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">6.2.1. 机器人外形尺寸</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">6.2.2. 机器人工作空间</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">6.2.3. 控制柜尺寸</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">6.3. 电气规格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">6.3.1. 电源电气规格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#i-o">6.3.2. I/O接口电气规格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">6.3.3. 典型功耗</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id22">6.4. 线路熔断</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id24">6.5. 剩余电流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id26">6.6. 指示灯</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id28">6.6.1. 机器人指示灯</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">6.6.2. 控制柜指示灯</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#minicab-lite">6.6.2.1. MiniCab Lite指示灯</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minicab-pro">6.6.2.2. MiniCab Pro指示灯</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id38">6.7. 按钮</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id40">6.7.1. 末端法兰按钮</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">6.7.2. 控制柜按钮</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id44">6.7.2.1. MiniCab Lite按钮</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id46">6.7.2.2. MiniCab Pro按钮</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id52">6.8. 机器人标定姿态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id54">6.9. 机器人旋转方向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id56">6.10. 机器人奇异点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id58">6.11. 手柄说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id60">6.12. 性能规格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id62">6.12.1. 机器人有效负载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id64">6.12.2. 安全停止时间和停止距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id66">6.12.3. 机器人底座可承受力和转矩</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id68">6.12.4. 机器人法兰可承受扭矩</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07_%E8%BF%90%E8%BE%93%E5%8F%8A%E8%B0%83%E8%AF%95.html">7. 运输及调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_%E7%BB%B4%E6%8A%A4.html">8. 维护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5.html">9. 故障排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_%E5%9B%9E%E6%94%B6%E5%A4%84%E7%90%86.html">10. 回收处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81.html">11. 质量保证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_%E9%99%84_%E5%BD%95.html">12. 附 录</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAKA Mini 硬件用户手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>技术规格</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<span id="id2"></span><h1><span class="section-number">6. </span>技术规格<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
+<section id="id3">
+<span id="id4"></span><h2><span class="section-number">6.1. </span>技术参数<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<section id="id5">
+<span id="id6"></span><h3><span class="section-number">6.1.1. </span>机器人技术规格<a class="headerlink" href="#id5" title="链接到此标题。"></a></h3>
+<table class="docutils align-default" id="id70">
+<caption><span class="caption-number">表 6.1 </span><span class="caption-text">机器人技术规格</span><a class="headerlink" href="#id70" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 33.0%" />
+<col style="width: 33.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>型号</p></th>
+<th class="head"><p>Mini2</p></th>
+<th class="head"><p>Mini2C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>负载</p></td>
+<td colspan="2"><p>2 kg (4.4 lb)</p></td>
+</tr>
+<tr class="row-odd"><td><p>重量</p></td>
+<td colspan="2"><p>9.9 kg (21.8 Ib)</p></td>
+</tr>
+<tr class="row-even"><td><p>工作半径</p></td>
+<td colspan="2"><p>580 mm (22.8 in)</p></td>
+</tr>
+<tr class="row-odd"><td><p>重复定位精度</p></td>
+<td><p>±0.05 mm (±0.002 in)</p></td>
+<td><p>±0.1 mm (±0.004 in)</p></td>
+</tr>
+<tr class="row-even"><td><p>自由度</p></td>
+<td colspan="2"><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>编程</p></td>
+<td colspan="2"><p>图像化编程、拖拽编程</p></td>
+</tr>
+<tr class="row-even"><td><p>示教器类型</p></td>
+<td colspan="2"><p>移动终端（电脑/平板/手机）</p></td>
+</tr>
+<tr class="row-odd"><td><p>协作操作</p></td>
+<td colspan="2"><p>根据GB 11291.1-2011进行协同操作</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>动作范围</p></td>
+</tr>
+<tr class="row-odd"><td><p>关节1</p></td>
+<td colspan="2"><p>±360°</p></td>
+</tr>
+<tr class="row-even"><td><p>关节2</p></td>
+<td colspan="2"><p>±125°</p></td>
+</tr>
+<tr class="row-odd"><td><p>关节3</p></td>
+<td colspan="2"><p>±130°</p></td>
+</tr>
+<tr class="row-even"><td><p>关节4</p></td>
+<td colspan="2"><p>±360°</p></td>
+</tr>
+<tr class="row-odd"><td><p>关节5</p></td>
+<td colspan="2"><p>±120°</p></td>
+</tr>
+<tr class="row-even"><td><p>关节6</p></td>
+<td colspan="2"><p>±360°</p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>关节速度</p></td>
+</tr>
+<tr class="row-even"><td><p>关节1</p></td>
+<td colspan="2"><p>180°/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>关节2</p></td>
+<td colspan="2"><p>180°/s</p></td>
+</tr>
+<tr class="row-even"><td><p>关节3</p></td>
+<td colspan="2"><p>180°/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>关节4</p></td>
+<td colspan="2"><p>180°/s</p></td>
+</tr>
+<tr class="row-even"><td><p>关节5</p></td>
+<td colspan="2"><p>180°/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>关节6</p></td>
+<td colspan="2"><p>180°/s</p></td>
+</tr>
+<tr class="row-even"><td><p>工具端最大速度</p></td>
+<td colspan="2"><p>1 m/s (3.3 ft/s)</p></td>
+</tr>
+<tr class="row-odd"><td><p>额定功率</p></td>
+<td colspan="2"><p>180 W</p></td>
+</tr>
+<tr class="row-even"><td><p>温度范围</p></td>
+<td colspan="2"><p>0-50°C (32-122°F) <sup>1</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p>湿度范围</p></td>
+<td colspan="2"><p>0~90% RH，非冷凝</p></td>
+</tr>
+<tr class="row-even"><td><p>IP等级</p></td>
+<td colspan="2"><p>IP40</p></td>
+</tr>
+<tr class="row-odd"><td><p>机器人安装</p></td>
+<td colspan="2"><p>任意角度安装</p></td>
+</tr>
+<tr class="row-even"><td><p>底座直径</p></td>
+<td colspan="2"><p>124 mm (4.9 in)</p></td>
+</tr>
+<tr class="row-odd"><td><p>工具I/O端口</p></td>
+<td colspan="2"><p>数字输入 2 / 数字输出 2 / 模拟输入 2</p></td>
+</tr>
+<tr class="row-even"><td><p>工具I/O电源</p></td>
+<td colspan="2"><p>24 V DC</p></td>
+</tr>
+<tr class="row-odd"><td><p>材质</p></td>
+<td colspan="2"><p>铝合金、PC</p></td>
+</tr>
+<tr class="row-even"><td><p>工具I/O尺寸</p></td>
+<td colspan="2"><p>M8</p></td>
+</tr>
+<tr class="row-odd"><td><p>机器人连接电缆长度</p></td>
+<td colspan="2"><p>6 m (236 in)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="table-notes docutils container">
+<p><sup>1</sup> 环境温度低于10℃时，使用机器人前请预热，否则机器人可能会停止或运行速率较低。</p>
+</div>
+</section>
+<section id="id7">
+<span id="id8"></span><h3><span class="section-number">6.1.2. </span>控制柜技术规格<a class="headerlink" href="#id7" title="链接到此标题。"></a></h3>
+<table class="docutils align-default" id="id71">
+<caption><span class="caption-number">表 6.2 </span><span class="caption-text">控制柜技术规格</span><a class="headerlink" href="#id71" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>MiniCab Lite</p></th>
+<th class="head"><p>MiniCab Pro</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p>重量（kg）</p></td>
+<td colspan="2"><p>1.3 kg (2.9 Ib)</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>尺寸（宽度*深度*高度）</p></td>
+<td colspan="2"><p>194*144*51 mm (7.6*5.7*2.0 in)</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>防护等级</p></td>
+<td colspan="2"><p>IP20</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>材质</p></td>
+<td colspan="2"><p>铝</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>电压</p></td>
+<td colspan="2"><p>48V DC</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>通讯方式</p></td>
+<td><p>网口</p></td>
+<td><p>2*Ethernet（千兆）</p></td>
+<td><p>3*Ethernet（千兆）</p></td>
+</tr>
+<tr class="row-even"><td><p>工业协议</p></td>
+<td><p>TCP/IP，Modbus TCP，Modbus RTU，PROFINET，Ethernet/IP</p></td>
+<td><p>TCP/IP，Modbus TCP，Modbus RTU，PROFINET，Ethernet/IP，Ether CAT主站</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>I/O端口</p></td>
+<td colspan="2"><p>8路数字输入、8路数字输出</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>I/O电源</p></td>
+<td colspan="2"><p>24 VDC</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>环境温度</p></td>
+<td colspan="2"><p>0-50℃（32-122℉）</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>环境湿度</p></td>
+<td colspan="2"><p>10-90%RH</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>海拔</p></td>
+<td colspan="2"><p>≤1000 m (3281 ft)</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>大气压</p></td>
+<td colspan="2"><p>1 Bar</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id9">
+<span id="id10"></span><h2><span class="section-number">6.2. </span>机械尺寸<a class="headerlink" href="#id9" title="链接到此标题。"></a></h2>
+<section id="id11">
+<span id="id12"></span><h3><span class="section-number">6.2.1. </span>机器人外形尺寸<a class="headerlink" href="#id11" title="链接到此标题。"></a></h3>
+<p>Mini 机器人的外形尺寸如下图所示。在安装时务必考虑到机器人的运动范围，以免伤害周围人员和设备。</p>
+<figure class="align-center" id="id72">
+<a class="reference internal image-reference" href="_images/外形尺寸图.svg"><img alt="_images/%E5%A4%96%E5%BD%A2%E5%B0%BA%E5%AF%B8%E5%9B%BE.svg" src="_images/%E5%A4%96%E5%BD%A2%E5%B0%BA%E5%AF%B8%E5%9B%BE.svg" style="width: 6cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.1 </span><span class="caption-text">外形尺寸图</span><a class="headerlink" href="#id72" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id13">
+<span id="id14"></span><h3><span class="section-number">6.2.2. </span>机器人工作空间<a class="headerlink" href="#id13" title="链接到此标题。"></a></h3>
+<p>Mini 机器人的工作空间如下图所示，选择机器人安装位置时，必须考虑机器人正上方和正下方的圆柱体空间，尽可能避免机器人末端移动到此空间内。因为在此区域内，机器人临近奇异点，此时即使机器人末端笛卡尔空间运动较慢，也会导致关节运动过快。从而导致机器人工作效率低下，风险评估难以进行。</p>
+<figure class="align-center" id="id73">
+<a class="reference internal image-reference" href="_images/工作空间.svg"><img alt="_images/%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4.svg" src="_images/%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4.svg" style="width: 15cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.2 </span><span class="caption-text">工作空间</span><a class="headerlink" href="#id73" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id15">
+<span id="id16"></span><h3><span class="section-number">6.2.3. </span>控制柜尺寸<a class="headerlink" href="#id15" title="链接到此标题。"></a></h3>
+<figure class="align-center" id="id74">
+<a class="reference internal image-reference" href="_images/MiniCabLite外形尺寸图.svg"><img alt="_images/MiniCabLite%E5%A4%96%E5%BD%A2%E5%B0%BA%E5%AF%B8%E5%9B%BE.svg" src="_images/MiniCabLite%E5%A4%96%E5%BD%A2%E5%B0%BA%E5%AF%B8%E5%9B%BE.svg" style="width: 17cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.3 </span><span class="caption-text">控制柜外形尺寸</span><a class="headerlink" href="#id74" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="id17">
+<span id="id18"></span><h2><span class="section-number">6.3. </span>电气规格<a class="headerlink" href="#id17" title="链接到此标题。"></a></h2>
+<p>本章主要介绍控制柜接口和线束的电气规格和参数。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>在使用控制柜时，务必按照推荐的电气参数使用，达到或者超过极限参数可能会造成控制柜硬件损坏。</p>
+</div>
+<section id="id19">
+<h3><span class="section-number">6.3.1. </span>电源电气规格<a class="headerlink" href="#id19" title="链接到此标题。"></a></h3>
+<p>控制柜电气参数如下：</p>
+<table class="docutils align-default" id="id75">
+<caption><span class="caption-number">表 6.3 </span><span class="caption-text">控制柜电气规格</span><a class="headerlink" href="#id75" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>最小值</strong></p></th>
+<th class="head"><p><strong>典型值</strong></p></th>
+<th class="head"><p><strong>最大值</strong></p></th>
+<th class="head"><p><strong>单位</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>电源输入</p></td>
+<td><p>20</p></td>
+<td><p>48</p></td>
+<td><p>60</p></td>
+<td><p>VDC</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="i-o">
+<span id="id20"></span><h3><span class="section-number">6.3.2. </span>I/O接口电气规格<a class="headerlink" href="#i-o" title="链接到此标题。"></a></h3>
+<p>数字输入和输出的设计遵循 IEC 61131-2，支持8路的数字输入和8路的数字输出。其电气规格如下表：</p>
+<table class="docutils align-default" id="id76">
+<caption><span class="caption-number">表 6.4 </span><span class="caption-text">数字输入接口电气规格</span><a class="headerlink" href="#id76" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>最小值</strong></p></th>
+<th class="head"><p><strong>典型值</strong></p></th>
+<th class="head"><p><strong>最大值</strong></p></th>
+<th class="head"><p><strong>单位</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>电压</p></td>
+<td><p>15</p></td>
+<td><p>24</p></td>
+<td><p>30</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>电流</p></td>
+<td><p>0.5</p></td>
+<td><p>2</p></td>
+<td><p>2.5</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-even"><td><p>OFF区域</p></td>
+<td><p>-3</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>ON区域</p></td>
+<td><p>15</p></td>
+<td><p>24</p></td>
+<td><p>30</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>功能</p></td>
+<td><p>/</p></td>
+<td><p>NPN</p></td>
+<td><p>/</p></td>
+<td><p>类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>IEC 61131-2</p></td>
+<td><p>/</p></td>
+<td><p>Type1</p></td>
+<td><p>/</p></td>
+<td><p>类型</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id77">
+<caption><span class="caption-number">表 6.5 </span><span class="caption-text">数字输出接口电气规格</span><a class="headerlink" href="#id77" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>典型值</strong></p></th>
+<th class="head"><p><strong>单位</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>单通道电流</p></td>
+<td><p>0.5</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>电压降</p></td>
+<td><p>1.8</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>漏电流</p></td>
+<td><p>0.5</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>功能</p></td>
+<td><p>NPN</p></td>
+<td><p>类型</p></td>
+</tr>
+<tr class="row-even"><td><p>IEC 61131-2</p></td>
+<td><p>Type1</p></td>
+<td><p>类型</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id21">
+<h3><span class="section-number">6.3.3. </span>典型功耗<a class="headerlink" href="#id21" title="链接到此标题。"></a></h3>
+<p>控制柜典型功耗：</p>
+<table class="docutils align-default" id="id78">
+<caption><span class="caption-number">表 6.6 </span><span class="caption-text">控制柜典型功耗</span><a class="headerlink" href="#id78" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>参数</strong></p></th>
+<th class="head"><p><strong>数值</strong></p></th>
+<th class="head"><p><strong>单位</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>待机功耗</p></td>
+<td><p>9</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>开机功耗</p></td>
+<td><p>15</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-even"><td><p>机器人上电功耗</p></td>
+<td><p>24</p></td>
+<td><p>W</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id22">
+<span id="id23"></span><h2><span class="section-number">6.4. </span>线路熔断<a class="headerlink" href="#id22" title="链接到此标题。"></a></h2>
+<p>控制柜无内置保险丝。需加装外置保险丝（时延型）或断路器（K类）。下表显示了外置保险丝或断路器的推荐额定值。</p>
+<table class="docutils align-default" id="id79">
+<caption><span class="caption-number">表 6.7 </span><span class="caption-text">外置保险丝规格</span><a class="headerlink" href="#id79" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 33.0%" />
+<col style="width: 33.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>机器人型号</strong></p></th>
+<th class="head"><p><strong>电压等级</strong></p></th>
+<th class="head"><p><strong>推荐额定值</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mini2，Mini2C</p></td>
+<td><p>125 VDC，单相</p></td>
+<td><p>10 A</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id24">
+<span id="id25"></span><h2><span class="section-number">6.5. </span>剩余电流<a class="headerlink" href="#id24" title="链接到此标题。"></a></h2>
+<p>请根据以下控制柜剩余电流数据提供外部接地故障保护（剩余电流装置，RCD）：</p>
+<table class="docutils align-default" id="id80">
+<caption><span class="caption-number">表 6.8 </span><span class="caption-text">剩余电流</span><a class="headerlink" href="#id80" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>机器人型号</strong></p></th>
+<th class="head"><p><strong>控制柜中的剩余电流</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mini2，Mini2C</p></td>
+<td><p>＜30 mA</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id26">
+<span id="id27"></span><h2><span class="section-number">6.6. </span>指示灯<a class="headerlink" href="#id26" title="链接到此标题。"></a></h2>
+<section id="id28">
+<span id="id29"></span><h3><span class="section-number">6.6.1. </span>机器人指示灯<a class="headerlink" href="#id28" title="链接到此标题。"></a></h3>
+<p>Mini 机器人在底座有一环形指示灯，其颜色指示含义如下表。</p>
+<figure class="align-center" id="id81">
+<a class="reference internal image-reference" href="_images/环形指示灯.svg"><img alt="_images/%E7%8E%AF%E5%BD%A2%E6%8C%87%E7%A4%BA%E7%81%AF.svg" src="_images/%E7%8E%AF%E5%BD%A2%E6%8C%87%E7%A4%BA%E7%81%AF.svg" style="width: 3.44cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.4 </span><span class="caption-text">环形指示灯</span><a class="headerlink" href="#id81" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default" id="id82">
+<caption><span class="caption-number">表 6.9 </span><span class="caption-text">环形指示灯颜色定义</span><a class="headerlink" href="#id82" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>颜色</strong></p></th>
+<th class="head"><p><strong>工作状态</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>蓝色</p></td>
+<td><p>上电未使能</p></td>
+</tr>
+<tr class="row-odd"><td><p>绿色</p></td>
+<td><p>使能完成</p></td>
+</tr>
+<tr class="row-even"><td><p>红色</p></td>
+<td><p>故障/保护性停止</p></td>
+</tr>
+<tr class="row-odd"><td><p>黄色</p></td>
+<td><p>拖拽模式</p></td>
+</tr>
+<tr class="row-even"><td><p>黄色快闪</p></td>
+<td><p>暂停</p></td>
+</tr>
+<tr class="row-odd"><td><p>黄色快闪</p></td>
+<td><p>单步调试</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id30">
+<span id="id31"></span><h3><span class="section-number">6.6.2. </span>控制柜指示灯<a class="headerlink" href="#id30" title="链接到此标题。"></a></h3>
+<section id="minicab-lite">
+<span id="id32"></span><h4><span class="section-number">6.6.2.1. </span>MiniCab Lite指示灯<a class="headerlink" href="#minicab-lite" title="链接到此标题。"></a></h4>
+<p>MiniCab Lite 有一个指示灯，位于前面板，颜色定义如下。</p>
+<figure class="align-center" id="id83">
+<a class="reference internal image-reference" href="_images/指示灯位置.svg"><img alt="_images/%E6%8C%87%E7%A4%BA%E7%81%AF%E4%BD%8D%E7%BD%AE.svg" src="_images/%E6%8C%87%E7%A4%BA%E7%81%AF%E4%BD%8D%E7%BD%AE.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.5 </span><span class="caption-text">指示灯位置</span><a class="headerlink" href="#id83" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default" id="id84">
+<caption><span class="caption-number">表 6.10 </span><span class="caption-text">指示灯颜色定义</span><a class="headerlink" href="#id84" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>名称</strong></p></th>
+<th class="head"><p><strong>功能</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>电源指示灯</p></td>
+<td><p>绿色常亮：控制柜上电</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="minicab-pro">
+<span id="id33"></span><h4><span class="section-number">6.6.2.2. </span>MiniCab Pro指示灯<a class="headerlink" href="#minicab-pro" title="链接到此标题。"></a></h4>
+<p>MiniCab Pro 有两个指示灯，分别为电源指示灯和状态指示灯，两个指示灯均位于前面板。</p>
+<section id="id34">
+<span id="id35"></span><h5><span class="section-number">6.6.2.2.1. </span>电源指示灯<a class="headerlink" href="#id34" title="链接到此标题。"></a></h5>
+<figure class="align-center" id="id85">
+<a class="reference internal image-reference" href="_images/电源指示灯位置.svg"><img alt="_images/%E7%94%B5%E6%BA%90%E6%8C%87%E7%A4%BA%E7%81%AF%E4%BD%8D%E7%BD%AE.svg" src="_images/%E7%94%B5%E6%BA%90%E6%8C%87%E7%A4%BA%E7%81%AF%E4%BD%8D%E7%BD%AE.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.6 </span><span class="caption-text">电源指示灯</span><a class="headerlink" href="#id85" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>电源指示灯颜色定义如下。</p>
+<table class="docutils align-default" id="id86">
+<caption><span class="caption-number">表 6.11 </span><span class="caption-text">指示灯颜色定义</span><a class="headerlink" href="#id86" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>颜色</strong></p></th>
+<th class="head"><p><strong>功能</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>绿色常亮</p></td>
+<td><p>控制柜上电</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id36">
+<span id="id37"></span><h5><span class="section-number">6.6.2.2.2. </span>状态指示灯<a class="headerlink" href="#id36" title="链接到此标题。"></a></h5>
+<figure class="align-center" id="id87">
+<a class="reference internal image-reference" href="_images/状态指示灯位置.svg"><img alt="_images/%E7%8A%B6%E6%80%81%E6%8C%87%E7%A4%BA%E7%81%AF%E4%BD%8D%E7%BD%AE.svg" src="_images/%E7%8A%B6%E6%80%81%E6%8C%87%E7%A4%BA%E7%81%AF%E4%BD%8D%E7%BD%AE.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.7 </span><span class="caption-text">状态指示灯</span><a class="headerlink" href="#id87" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>状态指示灯颜色定义如下。</p>
+<table class="docutils align-default" id="id88">
+<caption><span class="caption-number">表 6.12 </span><span class="caption-text">指示灯颜色定义</span><a class="headerlink" href="#id88" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>颜色</strong></p></th>
+<th class="head"><p><strong>功能</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>蓝色</p></td>
+<td><p>机器人已上电、未使能</p></td>
+</tr>
+<tr class="row-odd"><td><p>绿色</p></td>
+<td><p>机器人已使能</p></td>
+</tr>
+<tr class="row-even"><td><p>红色</p></td>
+<td><p>机器人故障</p></td>
+</tr>
+<tr class="row-odd"><td><p>黄色</p></td>
+<td><p>拖拽模式</p></td>
+</tr>
+<tr class="row-even"><td><p>黄色快闪</p></td>
+<td><p>暂停模式</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+<section id="id38">
+<span id="id39"></span><h2><span class="section-number">6.7. </span>按钮<a class="headerlink" href="#id38" title="链接到此标题。"></a></h2>
+<section id="id40">
+<span id="id41"></span><h3><span class="section-number">6.7.1. </span>末端法兰按钮<a class="headerlink" href="#id40" title="链接到此标题。"></a></h3>
+<p>机器人在末端法兰侧边配有工具I/O接口及两个按钮，按钮分别为拖拽按钮（FREE），与记录点位按钮（POINT），如下图所示。</p>
+<figure class="align-center" id="id89">
+<a class="reference internal image-reference" href="_images/末端法兰按钮.svg"><img alt="_images/%E6%9C%AB%E7%AB%AF%E6%B3%95%E5%85%B0%E6%8C%89%E9%92%AE.svg" src="_images/%E6%9C%AB%E7%AB%AF%E6%B3%95%E5%85%B0%E6%8C%89%E9%92%AE.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.8 </span><span class="caption-text">末端法兰按钮</span><a class="headerlink" href="#id89" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line"><strong>1</strong> 记录点位按钮</div>
+<div class="line"><strong>2</strong> 拖拽按钮</div>
+</div>
+<p>当拖拽按钮按下，机器人进入拖拽示教模式，在此模式下，用户可以直接拖动机器人至期望点。</p>
+<p>记录点位按钮需配合机器人操作软件 Coboπ 使用，当记录点位按钮按下时，操作软件会记录相应的位置（具体操作见 Coboπ 软件用户手册）。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>使用拖拽按钮前，需要充分评估可能存在的风险，必须确保机器人的安装姿态、末端负载与TCP等参数已设置准确，
+否则可能造成人身伤害或设备损毁。</p>
+</div>
+</section>
+<section id="id42">
+<span id="id43"></span><h3><span class="section-number">6.7.2. </span>控制柜按钮<a class="headerlink" href="#id42" title="链接到此标题。"></a></h3>
+<section id="id44">
+<span id="id45"></span><h4><span class="section-number">6.7.2.1. </span>MiniCab Lite按钮<a class="headerlink" href="#id44" title="链接到此标题。"></a></h4>
+<figure class="align-center" id="id90">
+<a class="reference internal image-reference" href="_images/Lite电源按钮位置.svg"><img alt="_images/Lite%E7%94%B5%E6%BA%90%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE.svg" src="_images/Lite%E7%94%B5%E6%BA%90%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.9 </span><span class="caption-text">电源按钮</span><a class="headerlink" href="#id90" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>MiniCab Lite 电源按钮位于前面板，用于控制开关机，方式如下：</p>
+<ul class="simple">
+<li><p><strong>开机：</strong> 短按1秒电源按钮后松开，控制柜开机。</p></li>
+<li><p><strong>关机：</strong> 长按电源按钮3秒以上，控制柜关机。</p></li>
+</ul>
+</section>
+<section id="id46">
+<span id="id47"></span><h4><span class="section-number">6.7.2.2. </span>MiniCab Pro按钮<a class="headerlink" href="#id46" title="链接到此标题。"></a></h4>
+<section id="id48">
+<span id="id49"></span><h5><span class="section-number">6.7.2.2.1. </span>电源按钮<a class="headerlink" href="#id48" title="链接到此标题。"></a></h5>
+<figure class="align-center" id="id91">
+<a class="reference internal image-reference" href="_images/Pro电源按钮位置.svg"><img alt="_images/Pro%E7%94%B5%E6%BA%90%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE.svg" src="_images/Pro%E7%94%B5%E6%BA%90%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.10 </span><span class="caption-text">电源按钮</span><a class="headerlink" href="#id91" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>MiniCab Pro 电源按钮位于前面板，用于控制开关机，方式如下：</p>
+<ul class="simple">
+<li><p><strong>开机：</strong> 短按1秒电源按钮后松开，控制柜开机。</p></li>
+<li><p><strong>关机：</strong> 长按电源按钮3秒以上，控制柜关机。</p></li>
+</ul>
+</section>
+<section id="id50">
+<span id="id51"></span><h5><span class="section-number">6.7.2.2.2. </span>网络复位按钮<a class="headerlink" href="#id50" title="链接到此标题。"></a></h5>
+<figure class="align-center" id="id92">
+<a class="reference internal image-reference" href="_images/网络复位按钮位置.svg"><img alt="_images/%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%BD%8D%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE.svg" src="_images/%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%BD%8D%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.11 </span><span class="caption-text">网络复位按钮</span><a class="headerlink" href="#id92" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>RST Wi-Fi：Wi-Fi密码复位按钮，长按10秒后，控制柜Wi-Fi恢复为初始值，
+复位参数包括在Coboπ “Wi-Fi 设置 &gt; AP设备配网” 界面配置的所有参数。</p>
+<p>复位按钮孔直径为2mm，可使用1.5mm防静电一字螺丝刀按压此按钮。</p>
+</section>
+</section>
+</section>
+</section>
+<section id="id52">
+<span id="id53"></span><h2><span class="section-number">6.8. </span>机器人标定姿态<a class="headerlink" href="#id52" title="链接到此标题。"></a></h2>
+<p>机器人标定姿态即标定机器人时的姿态。机器人各关节连接处贴有标定刻线，用于机器人换关节后的标定。
+当所有相邻刻线对齐时，表示机器人处于标定姿态。</p>
+<table class="docutils align-default" id="id93">
+<caption><span class="caption-number">表 6.13 </span><span class="caption-text">标定姿态关节角度</span><a class="headerlink" href="#id93" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 17.0%" />
+<col style="width: 17.0%" />
+<col style="width: 17.0%" />
+<col style="width: 17.0%" />
+<col style="width: 17.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>关节一</strong></p></th>
+<th class="head"><p><strong>关节二</strong></p></th>
+<th class="head"><p><strong>关节三</strong></p></th>
+<th class="head"><p><strong>关节四</strong></p></th>
+<th class="head"><p><strong>关节五</strong></p></th>
+<th class="head"><p><strong>关节六</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0°</p></td>
+<td><p>0°</p></td>
+<td><p>0°</p></td>
+<td><p>0°</p></td>
+<td><p>0°</p></td>
+<td><p>0°</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id94">
+<a class="reference internal image-reference" href="_images/机器人标定姿态.png"><img alt="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A0%87%E5%AE%9A%E5%A7%BF%E6%80%81.png" src="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A0%87%E5%AE%9A%E5%A7%BF%E6%80%81.png" style="width: 2cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.12 </span><span class="caption-text">机器人标定姿态</span><a class="headerlink" href="#id94" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id54">
+<span id="id55"></span><h2><span class="section-number">6.9. </span>机器人旋转方向<a class="headerlink" href="#id54" title="链接到此标题。"></a></h2>
+<p>机器人旋转角度见 <a class="reference internal" href="#id5"><span class="std std-ref">机器人技术规格</span></a> ，旋转方向如下图。</p>
+<figure class="align-center" id="id95">
+<a class="reference internal image-reference" href="_images/机器人旋转方向.svg"><img alt="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%97%8B%E8%BD%AC%E6%96%B9%E5%90%91.svg" src="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%97%8B%E8%BD%AC%E6%96%B9%E5%90%91.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.13 </span><span class="caption-text">机器人旋转方向</span><a class="headerlink" href="#id95" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id56">
+<span id="id57"></span><h2><span class="section-number">6.10. </span>机器人奇异点<a class="headerlink" href="#id56" title="链接到此标题。"></a></h2>
+<p>奇异点是以笛卡尔空间描述机器人位置的一些固有点位，对关节运动无影响。遇到奇异点时，首先考虑该运动是否可以使用关节运动。其次，若在机器人运动路径中间遇到奇异点，可以修改机器人运动路径以绕过奇异点。此外，也可以通过改变机器人安装位置或末端工具安装尺寸的方式，改变笛卡尔点位在机器人关节空间下的描述。</p>
+<p>当机器人处于奇异点时，会产生以下影响：</p>
+<ul class="simple">
+<li><p>在奇异点，机器人会缺失一个或多个方向的运动能力。</p></li>
+<li><p>在奇异点附近，机器人无法找到一组合适的关节角度使TCP到达期望位置。</p></li>
+<li><p>在奇异点附近，机器人需要较大的关节速度以达到期望的TCP速度。</p></li>
+<li><p>奇异点附近的剧烈运动容易引发意外状况并缩短机器人关节寿命。</p></li>
+</ul>
+<p>机器人存在三种类型的奇异点，分别为肩部奇异、肘部奇异和腕部奇异。奇异点描述及避免方式如下：</p>
+<p><strong>肩部奇异：</strong> 5、6关节轴线交点位于1、2关节轴线所在平面上时，机器人处于肩部奇异。</p>
+<figure class="align-center" id="id96">
+<a class="reference internal image-reference" href="_images/肩部奇异姿态.svg"><img alt="_images/%E8%82%A9%E9%83%A8%E5%A5%87%E5%BC%82%E5%A7%BF%E6%80%81.svg" src="_images/%E8%82%A9%E9%83%A8%E5%A5%87%E5%BC%82%E5%A7%BF%E6%80%81.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.14 </span><span class="caption-text">肩部奇异姿态</span><a class="headerlink" href="#id96" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>避免肩部奇异方式：</p>
+<ul class="simple">
+<li><p>避免机器人末端法兰中心点位于机器人底座正上方。机器人正上方存在末端法兰中心无法到达的位置，且在靠近过程中易出现肩部奇异。</p></li>
+<li><p>避免两个点的1关节相差180°左右时使用直线运动。两个点的1关节值相差180°左右时，有较大概率出现肩部奇异。此时需要使用关节运动，或在肩部奇异范围之外设置中间过渡点。</p></li>
+</ul>
+<p><strong>肘部奇异：</strong> 2、3、4关节共面时或关节3为0°时，机器人处于肘部奇异。</p>
+<figure class="align-center" id="id97">
+<a class="reference internal image-reference" href="_images/肘部奇异姿态.svg"><img alt="_images/%E8%82%98%E9%83%A8%E5%A5%87%E5%BC%82%E5%A7%BF%E6%80%81.svg" src="_images/%E8%82%98%E9%83%A8%E5%A5%87%E5%BC%82%E5%A7%BF%E6%80%81.svg" style="width: 7.23cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.15 </span><span class="caption-text">肘部奇异姿态</span><a class="headerlink" href="#id97" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>避免肘部奇异方式：</p>
+<ul class="simple">
+<li><p>机器人出现肘部奇异时说明目标位置已经接近机器人工作范围极限。此时需调整机器人安装位置或延长末端工具长度。</p></li>
+</ul>
+<p><strong>腕部奇异：</strong> 4、6关节共线时或者当关节5为0°时，机器人处于腕部奇异。</p>
+<figure class="align-center" id="id98">
+<a class="reference internal image-reference" href="_images/腕部奇异姿态.svg"><img alt="_images/%E8%85%95%E9%83%A8%E5%A5%87%E5%BC%82%E5%A7%BF%E6%80%81.svg" src="_images/%E8%85%95%E9%83%A8%E5%A5%87%E5%BC%82%E5%A7%BF%E6%80%81.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.16 </span><span class="caption-text">腕部奇异姿态</span><a class="headerlink" href="#id98" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>避免腕部奇异方式：</p>
+<ul class="simple">
+<li><p>机器人腕部奇异通常出现在有姿态变化的运动中，因此在姿态变化较大的情况下应优先使用关节运动，</p></li>
+<li><p>尽量避免使用直线运动、圆弧运动等笛卡尔运动。</p></li>
+</ul>
+</section>
+<section id="id58">
+<span id="id59"></span><h2><span class="section-number">6.11. </span>手柄说明<a class="headerlink" href="#id58" title="链接到此标题。"></a></h2>
+<p>JAKA机器人配备按键手柄，可以控制机器人及控制柜。手柄按键功能描述如下：</p>
+<figure class="align-center" id="id99">
+<a class="reference internal image-reference" href="_images/手柄按钮.svg"><img alt="_images/%E6%89%8B%E6%9F%84%E6%8C%89%E9%92%AE.svg" src="_images/%E6%89%8B%E6%9F%84%E6%8C%89%E9%92%AE.svg" style="width: 7.86cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.17 </span><span class="caption-text">手柄按钮</span><a class="headerlink" href="#id99" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default" id="id100">
+<caption><span class="caption-number">表 6.14 </span><span class="caption-text">手柄功能描述</span><a class="headerlink" href="#id100" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 16.0%" />
+<col style="width: 79.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>名称</strong></p></th>
+<th class="head"><p><strong>描述</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p><strong>急停按钮</strong></p></td>
+<td><p><strong>急停用。</strong> 急停按钮仅作为紧急情况下使用，不可作为一般的关电设备使用。</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2</strong></p></td>
+<td><p><strong>开关按钮</strong></p></td>
+<td><p><strong>开机：</strong> 短按开关按钮 1 s 后松开，蜂鸣器响，控制柜开机。</p>
+<p><strong>关机：</strong> 长按开关按钮3s以上，手柄蜂鸣6~7次，控制柜关机。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>3</strong></p></td>
+<td><p><strong>使能按钮</strong></p></td>
+<td><p><strong>机器人上电：</strong> 机器人电源未打开情况下，短按使能按钮，等待机器人末端指示灯变为蓝色，机器人上电。</p>
+<p><strong>机器人下电：</strong> 机器人电源打开情况下，短按使能按钮，等待机器人末端指示灯熄灭，机器人下电。</p>
+<p><strong>机器人上使能：</strong> 电源打开情况下，先按住锁定按钮，再同时按使能按钮，机器人末端指示灯变为绿色，机器人上使能。</p>
+<p><strong>机器人下使能：</strong> 机器人使能情况下，先按住锁定按钮，再同时按使能按钮。机器人末端指示灯变为蓝色，机器人下使能。</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>4</strong></p></td>
+<td><p><strong>启动/停止按钮</strong></p></td>
+<td><p><strong>开始程序运行：</strong> 短按按钮，启动加载的默认程序，运行到程序的初始位置后，执行默认程序。</p>
+<p><strong>终止程序运行：</strong> 机器人运行程序时，短按程序终止按钮。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>5</strong></p></td>
+<td><p><strong>复位按钮</strong></p></td>
+<td><p><strong>复位：</strong> 机器人使能后，在非运行程序过程时，长按控制机器人运行到 Coboπ 设置的初始姿态。当程序运行到此位置时，再次按住按钮，锁定提示灯为蓝色呼吸。</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>6</strong></p></td>
+<td><p><strong>暂停/恢复按钮</strong></p></td>
+<td><p><strong>暂停：</strong> 机器人自动运行过程中，按下暂停程序执行。</p>
+<p><strong>恢复：</strong> 机器人处于暂停状态时，按下该按钮恢复程序执行。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>7</strong></p></td>
+<td><p><strong>锁定按钮</strong></p></td>
+<td><p><strong>锁定手柄：</strong> 长按锁定按钮3s，锁定提示灯为橙色呼吸。</p>
+<p><strong>解锁手柄：</strong> 长按锁定按钮3s，锁定提示灯熄灭。</p>
+<p><strong>组合功能：</strong> 其他按钮可与锁定按钮搭配使用。</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>8</strong></p></td>
+<td><p><strong>锁定提示灯</strong></p></td>
+<td><p><strong>锁定状态：</strong> 处于锁定状态时，锁定提示灯橙色呼吸。手柄处于锁定状态时，除锁定与开关按钮之外，其它按钮无效。可以通过App对机器人进行控制。</p>
+<p><strong>解锁状态：</strong> 处于解锁状态时，灯熄灭，可使用手柄。App界面灰色，不能使用App再对机器人进行任何控制。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>9</strong></p></td>
+<td><p><strong>手柄指示灯</strong></p></td>
+<td><p>控制柜上电过程中，手柄上的指示灯会以红、蓝、绿三种颜色交替闪烁，并发出三声蜂鸣提示，随后指示灯变为橙色，等待工控机启动。启动后，手柄指示灯呈现蓝色闪烁。</p>
+<p>机器人上电后，手柄指示灯呈现蓝色闪烁。</p>
+<p>机器人上使能后，手柄指示灯呈现绿色闪烁。</p>
+<p>机器人处于急停和保护性停止状态时，手柄指示灯呈现红色闪烁。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ul class="simple">
+<li><p>当控制柜完成上电后，按下任何按键，手柄会以每秒2次的频率蜂鸣。</p></li>
+<li><p>使用手柄操作机器人时，请确保所操作的机器人在视线范围之内，并遵循相关安全守则，防止对机器人周边人员或设备造成伤害。</p></li>
+</ul>
+</div>
+</section>
+<section id="id60">
+<span id="id61"></span><h2><span class="section-number">6.12. </span>性能规格<a class="headerlink" href="#id60" title="链接到此标题。"></a></h2>
+<section id="id62">
+<span id="id63"></span><h3><span class="section-number">6.12.1. </span>机器人有效负载<a class="headerlink" href="#id62" title="链接到此标题。"></a></h3>
+<p>机器人最大有效负载与重心偏置有关，重心偏置的多少受机器人末端法兰中心到负载质心的距离影响。下图为负载与重心偏置的关系图：</p>
+<ul class="simple">
+<li><p>X轴：负载偏置距离</p></li>
+<li><p>Y轴：负载</p></li>
+</ul>
+<figure class="align-center" id="id101">
+<a class="reference internal image-reference" href="_images/Mini2负载偏心图.svg"><img alt="_images/Mini2%E8%B4%9F%E8%BD%BD%E5%81%8F%E5%BF%83%E5%9B%BE.svg" src="_images/Mini2%E8%B4%9F%E8%BD%BD%E5%81%8F%E5%BF%83%E5%9B%BE.svg" style="width: 15cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.18 </span><span class="caption-text">负载偏心图</span><a class="headerlink" href="#id101" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>偏置距离指负载质心到机器人末端法兰面中心点的距离。</p>
+</div>
+</section>
+<section id="id64">
+<span id="id65"></span><h3><span class="section-number">6.12.2. </span>安全停止时间和停止距离<a class="headerlink" href="#id64" title="链接到此标题。"></a></h3>
+<p>JAKA机器人测试了自接收停止信号至完全停止的时间，包括不同臂展及运行速度下的数据（依据ISO 10218-1标准执行测试）。</p>
+<p>安全停止时间是指从紧急停止按钮被按下或某一安全防护功能被触发到机器人运动停止所需的时间；停止距离则指在安全停止时间内机器人末端移动的距离。其中，紧急停止按钮被按下属于停止类别1（Cat. 1），触发安全防护功能属于停止类别2（Cat. 2）。在此时间段内，机器人仍在运动，具有对人体或其他设备造成伤害的可能性，因此使用人员、集成商在风险评估时应将此时间和距离考虑在内。</p>
+<p>测试条件如下：</p>
+<ul class="simple">
+<li><p>速度：100%，66%，33%；</p></li>
+<li><p>臂展：100%，66%，33%；</p></li>
+</ul>
+<table class="no-auto-merge docutils align-default">
+<colgroup>
+<col style="width: 9.0%" />
+<col style="width: 30.0%" />
+<col style="width: 29.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>100%臂展</strong></p></th>
+<th class="head"><p><strong>66%臂展</strong></p></th>
+<th class="head"><p><strong>33%臂展</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>关节1</strong></p></td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J1-100.svg"><img alt="_images/J1-100.svg" src="_images/J1-100.svg" style="width: 4cm;" />
+</a>
+</figure>
+</td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J1-66.svg"><img alt="_images/J1-66.svg" src="_images/J1-66.svg" style="width: 3.6cm;" />
+</a>
+</figure>
+</td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J1-33.svg"><img alt="_images/J1-33.svg" src="_images/J1-33.svg" style="width: 3.1cm;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="no-auto-merge docutils align-default">
+<colgroup>
+<col style="width: 9.0%" />
+<col style="width: 30.0%" />
+<col style="width: 29.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>100%臂展</strong></p></th>
+<th class="head"><p><strong>66%臂展</strong></p></th>
+<th class="head"><p><strong>33%臂展</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>关节2</strong></p></td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J2-100.svg"><img alt="_images/J2-100.svg" src="_images/J2-100.svg" style="width: 4.29cm;" />
+</a>
+</figure>
+</td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J2-66.svg"><img alt="_images/J2-66.svg" src="_images/J2-66.svg" style="width: 3.6cm;" />
+</a>
+</figure>
+</td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J2-33.svg"><img alt="_images/J2-33.svg" src="_images/J2-33.svg" style="width: 3.1cm;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="no-auto-merge docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><strong>100%臂展</strong></p></th>
+<th class="head"><p><strong>66%臂展</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>关节3</strong></p></td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J3-100.svg"><img alt="_images/J3-100.svg" src="_images/J3-100.svg" style="width: 3.5cm;" />
+</a>
+</figure>
+</td>
+<td><figure class="align-center">
+<a class="reference internal image-reference" href="_images/J3-66.svg"><img alt="_images/J3-66.svg" src="_images/J3-66.svg" style="width: 3.1cm;" />
+</a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>负载：见下表。</p></li>
+</ul>
+<table class="docutils align-default" id="id102">
+<caption><span class="caption-number">表 6.15 </span><span class="caption-text">停止时间和距离测试负载</span><a class="headerlink" href="#id102" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 48.0%" />
+<col style="width: 52.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>型号</strong></p></th>
+<th class="head"><p><strong>负载</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mini2，Mini2C</p></td>
+<td><p>2 kg (4.4 lb)</p></td>
+</tr>
+</tbody>
+</table>
+<p>触发停止类别 1 和停止类别 2 的距离和时间见 <a class="reference internal" href="15_%E9%99%84_%E5%BD%95.html#id3"><span class="std std-ref">附录 一：停止时间及停止距离</span></a> 。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p><strong>关节内部制动器失效风险：</strong></p>
+<ul class="simple">
+<li><p>进行风险评估时，需考虑关节内部制动器可能发生故障。</p></li>
+<li><p>需注意，JAKA机器人关节内部制动器仅能承受有限次数的制动操作。</p></li>
+</ul>
+<p>未遵循上述说明可能导致人员死亡、重伤或设备损坏。</p>
+</div>
+<p>若控制系统发生供电中断，制动器将启动，但机器人机械装置可能偏离预定轨迹。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p><strong>机器人偏离预定轨迹的风险：</strong></p>
+<ul class="simple">
+<li><p>可将 24 V 电源缓冲装置（UPS）作为降低断电风险的措施之一。UPS 的容量、保持时间、接地方式和关机流程必须根据整机负载选型并验证。</p></li>
+<li><p>必须验证采用 UPS 后机器人能够按预期停止，且安全功能不受影响；不得仅凭安装 UPS 假定机器人会沿原轨迹同步停止。</p></li>
+<li><p>执行风险评估时，应考虑断电后可能偏离预定轨迹的区域。</p></li>
+</ul>
+<p>未遵循上述说明可能导致人员死亡、重伤或设备损坏。</p>
+</div>
+</section>
+<section id="id66">
+<span id="id67"></span><h3><span class="section-number">6.12.3. </span>机器人底座可承受力和转矩<a class="headerlink" href="#id66" title="链接到此标题。"></a></h3>
+<p>下图为机器人底座应力的方向。</p>
+<figure class="align-center" id="id103">
+<a class="reference internal image-reference" href="_images/机器人底座力和转矩方向.svg"><img alt="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BA%95%E5%BA%A7%E5%8A%9B%E5%92%8C%E8%BD%AC%E7%9F%A9%E6%96%B9%E5%90%91.svg" src="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BA%95%E5%BA%A7%E5%8A%9B%E5%92%8C%E8%BD%AC%E7%9F%A9%E6%96%B9%E5%90%91.svg" style="width: 5.27cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 6.19 </span><span class="caption-text">机器人底座力和转矩方向</span><a class="headerlink" href="#id103" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">Fx：X方向上的力</div>
+<div class="line">Mx：X方向上的弯曲转矩</div>
+<div class="line">Fy：Y方向上的力</div>
+<div class="line">My：Y方向上的弯曲转矩</div>
+<div class="line">Fz：Z方向上的力</div>
+<div class="line">Mz：Z方向上的弯曲转矩</div>
+</div>
+<p>下表为机器人底座各方向可承受的最大力和转矩。</p>
+<table class="docutils align-default" id="id104">
+<caption><span class="caption-number">表 6.16 </span><span class="caption-text">机器人底座可承受最大力和转矩</span><a class="headerlink" href="#id104" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Mini2, Mini2C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fx, Fy</p></td>
+<td><p>120 N (27 Ibf)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fz</p></td>
+<td><p>140 N (31 Ibf)</p></td>
+</tr>
+<tr class="row-even"><td><p>Mx, My</p></td>
+<td><p>100 Nm (885 Ibf·in)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mz</p></td>
+<td><p>90 Nm (797 Ibf·in)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">小心</p>
+<p>上表中的力和转矩为机器人可承受的最大值。这些值无法在同时达到最大！</p>
+</div>
+</section>
+<section id="id68">
+<span id="id69"></span><h3><span class="section-number">6.12.4. </span>机器人法兰可承受扭矩<a class="headerlink" href="#id68" title="链接到此标题。"></a></h3>
+<p>下表为机器人末端法兰可承受最大扭矩。</p>
+<table class="docutils align-default" id="id105">
+<caption><span class="caption-number">表 6.17 </span><span class="caption-text">机器人末端法兰可承受最大扭矩</span><a class="headerlink" href="#id105" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>机型</p></th>
+<th class="head"><p>Mini2, Mini2C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>扭矩</p></td>
+<td><p>14 Nm (124 Ibf·in)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<div class="doc-comments">
+
+    <h2>评论</h2>
+
+    <script src="https://giscus.app/client.js"
+            data-repo="JAKADoc/JAKA-AL-Hardware-User-Manual"
+            data-repo-id="R_kgDOVArBsw"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOVArBs84DHUkS"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+
+</div>
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="05_%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" class="btn btn-neutral float-left" title="5. 系统概述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="07_%E8%BF%90%E8%BE%93%E5%8F%8A%E8%B0%83%E8%AF%95.html" class="btn btn-neutral float-right" title="7. 运输及调试" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有  2026, JAKA Robotics。</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+.. _产品清单:
+
+产品清单
+#########
+
+当您购买一台完整的JAKA |product_name| 机器人时，您收到的包装清单明细如下表所示：
+
+.. csv-table:: 产品清单
+   :file: ./tables/产品清单.csv
+   :header-rows: 1
+   :widths: 20 50 30
+   :class: merge-empty-vertical
